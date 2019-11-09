@@ -1,0 +1,1712 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Model Rpn - mot</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../../../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="#4caf50">
+      
+    
+    
+      <script src="../../../../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../../../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="green" data-md-color-accent="lightgreen">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#module-motobject_detectionmodelingmodel_rpn" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../../../../.." title="mot" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              mot
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Model Rpn
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="https://github.com/surfriderfoundationeurope/mot/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    mot
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../../../../.." title="mot" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    mot
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="https://github.com/surfriderfoundationeurope/mot/" title="Go to repository" class="md-source" data-md-source="github">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__github" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    mot
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../.." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../../../../CONTRIBUTING/" title="Contributing" class="md-nav__link">
+      Contributing
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Reference
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Reference
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1" type="checkbox" id="nav-3-1" checked>
+    
+    <label class="md-nav__link" for="nav-3-1">
+      Mot
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-1">
+        Mot
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2" type="checkbox" id="nav-3-1-2" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-2">
+      Object Detection
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-2">
+        Object Detection
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../common/" title="Common" class="md-nav__link">
+      Common
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../config/" title="Config" class="md-nav__link">
+      Config
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../data/" title="Data" class="md-nav__link">
+      Data
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../eval/" title="Eval" class="md-nav__link">
+      Eval
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../predict/" title="Predict" class="md-nav__link">
+      Predict
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../train/" title="Train" class="md-nav__link">
+      Train
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../viz/" title="Viz" class="md-nav__link">
+      Viz
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-9" type="checkbox" id="nav-3-1-2-9">
+    
+    <label class="md-nav__link" for="nav-3-1-2-9">
+      Dataset
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-9">
+        Dataset
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataset/dataset/" title="Dataset" class="md-nav__link">
+      Dataset
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataset/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../dataset/mot/" title="Mot" class="md-nav__link">
+      Mot
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-10" type="checkbox" id="nav-3-1-2-10" checked>
+    
+    <label class="md-nav__link" for="nav-3-1-2-10">
+      Modeling
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-10">
+        Modeling
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backbone/" title="Backbone" class="md-nav__link">
+      Backbone
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../generalized_rcnn/" title="Generalized Rcnn" class="md-nav__link">
+      Generalized Rcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_box/" title="Model Box" class="md-nav__link">
+      Model Box
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_cascade/" title="Model Cascade" class="md-nav__link">
+      Model Cascade
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_fpn/" title="Model Fpn" class="md-nav__link">
+      Model Fpn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_frcnn/" title="Model Frcnn" class="md-nav__link">
+      Model Frcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../model_mrcnn/" title="Model Mrcnn" class="md-nav__link">
+      Model Mrcnn
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Model Rpn
+      </label>
+    
+    <a href="./" title="Model Rpn" class="md-nav__link md-nav__link--active">
+      Model Rpn
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate_rpn_proposals" class="md-nav__link">
+    generate_rpn_proposals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_all_anchors" class="md-nav__link">
+    get_all_anchors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpn_head" class="md-nav__link">
+    rpn_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpn_losses" class="md-nav__link">
+    rpn_losses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-2-11" type="checkbox" id="nav-3-1-2-11">
+    
+    <label class="md-nav__link" for="nav-3-1-2-11">
+      Utils
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="4">
+      <label class="md-nav__title" for="nav-3-1-2-11">
+        Utils
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/box_ops/" title="Box Ops" class="md-nav__link">
+      Box Ops
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../utils/np_box_ops/" title="Np Box Ops" class="md-nav__link">
+      Np Box Ops
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-1-3" type="checkbox" id="nav-3-1-3">
+    
+    <label class="md-nav__link" for="nav-3-1-3">
+      Tracker
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-1-3">
+        Tracker
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/" title="Index" class="md-nav__link">
+      Index
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/tracker/" title="Tracker" class="md-nav__link">
+      Tracker
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../../tracker/video_utils/" title="Video Utils" class="md-nav__link">
+      Video Utils
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#functions" class="md-nav__link">
+    Functions
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#generate_rpn_proposals" class="md-nav__link">
+    generate_rpn_proposals
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#get_all_anchors" class="md-nav__link">
+    get_all_anchors
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpn_head" class="md-nav__link">
+    rpn_head
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rpn_losses" class="md-nav__link">
+    rpn_losses
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                  <a href="https://github.com/surfriderfoundationeurope/mot/edit/master/reference/mot/object_detection/modeling/model_rpn.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
+                
+                <h1 id="module-motobject_detectionmodelingmodel_rpn">Module mot.object_detection.modeling.model_rpn</h1>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span><span class="c1"># -*- coding: utf-8 -*-</span>
+
+<span class="kn">import</span> <span class="nn">tensorflow</span> <span class="kn">as</span> <span class="nn">tf</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="kn">as</span> <span class="nn">np</span>
+
+<span class="kn">from</span> <span class="nn">tensorpack.models</span> <span class="kn">import</span> <span class="n">Conv2D</span><span class="p">,</span> <span class="n">layer_register</span>
+
+<span class="kn">from</span> <span class="nn">tensorpack.tfutils.argscope</span> <span class="kn">import</span> <span class="n">argscope</span>
+
+<span class="kn">from</span> <span class="nn">tensorpack.tfutils.scope_utils</span> <span class="kn">import</span> <span class="n">auto_reuse_variable_scope</span><span class="p">,</span> <span class="n">under_name_scope</span>
+
+<span class="kn">from</span> <span class="nn">tensorpack.tfutils.summary</span> <span class="kn">import</span> <span class="n">add_moving_summary</span>
+
+<span class="kn">from</span> <span class="nn">tensorpack.utils.argtools</span> <span class="kn">import</span> <span class="n">memoized</span>
+
+<span class="kn">from</span> <span class="nn">mot.object_detection.config</span> <span class="kn">import</span> <span class="n">config</span> <span class="k">as</span> <span class="n">cfg</span>
+
+<span class="kn">from</span> <span class="nn">mot.object_detection.modeling.model_box</span> <span class="kn">import</span> <span class="n">clip_boxes</span>
+
+<span class="nd">@layer_register</span><span class="p">(</span><span class="n">log_shape</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+<span class="nd">@auto_reuse_variable_scope</span>
+
+<span class="k">def</span> <span class="nf">rpn_head</span><span class="p">(</span><span class="n">featuremap</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="n">num_anchors</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">        label_logits: fHxfWxNA</span>
+
+<span class="sd">        box_logits: fHxfWxNAx4</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">with</span> <span class="n">argscope</span><span class="p">(</span><span class="n">Conv2D</span><span class="p">,</span> <span class="n">data_format</span><span class="o">=</span><span class="s1">&#39;channels_first&#39;</span><span class="p">,</span>
+
+                  <span class="n">kernel_initializer</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">random_normal_initializer</span><span class="p">(</span><span class="n">stddev</span><span class="o">=</span><span class="mf">0.01</span><span class="p">)):</span>
+
+        <span class="n">hidden</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="s1">&#39;conv0&#39;</span><span class="p">,</span> <span class="n">featuremap</span><span class="p">,</span> <span class="n">channel</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="n">activation</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">relu</span><span class="p">)</span>
+
+        <span class="n">label_logits</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="n">num_anchors</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">box_logits</span> <span class="o">=</span> <span class="n">Conv2D</span><span class="p">(</span><span class="s1">&#39;box&#39;</span><span class="p">,</span> <span class="n">hidden</span><span class="p">,</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">num_anchors</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># 1, NA(*4), im/16, im/16 (NCHW)</span>
+
+        <span class="n">label_logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">transpose</span><span class="p">(</span><span class="n">label_logits</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># 1xfHxfWxNA</span>
+
+        <span class="n">label_logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">squeeze</span><span class="p">(</span><span class="n">label_logits</span><span class="p">,</span> <span class="mi">0</span><span class="p">)</span>  <span class="c1"># fHxfWxNA</span>
+
+        <span class="n">shp</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">shape</span><span class="p">(</span><span class="n">box_logits</span><span class="p">)</span>  <span class="c1"># 1x(NAx4)xfHxfW</span>
+
+        <span class="n">box_logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">transpose</span><span class="p">(</span><span class="n">box_logits</span><span class="p">,</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span>  <span class="c1"># 1xfHxfWx(NAx4)</span>
+
+        <span class="n">box_logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">reshape</span><span class="p">(</span><span class="n">box_logits</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">stack</span><span class="p">([</span><span class="n">shp</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">shp</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">num_anchors</span><span class="p">,</span> <span class="mi">4</span><span class="p">]))</span>  <span class="c1"># fHxfWxNAx4</span>
+
+    <span class="k">return</span> <span class="n">label_logits</span><span class="p">,</span> <span class="n">box_logits</span>
+
+<span class="nd">@under_name_scope</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">rpn_losses</span><span class="p">(</span><span class="n">anchor_labels</span><span class="p">,</span> <span class="n">anchor_boxes</span><span class="p">,</span> <span class="n">label_logits</span><span class="p">,</span> <span class="n">box_logits</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Args:</span>
+
+<span class="sd">        anchor_labels: fHxfWxNA</span>
+
+<span class="sd">        anchor_boxes: fHxfWxNAx4, encoded</span>
+
+<span class="sd">        label_logits:  fHxfWxNA</span>
+
+<span class="sd">        box_logits: fHxfWxNAx4</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">        label_loss, box_loss</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;/cpu:0&#39;</span><span class="p">):</span>
+
+        <span class="n">valid_mask</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">stop_gradient</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="kp">not_equal</span><span class="p">(</span><span class="n">anchor_labels</span><span class="p">,</span> <span class="o">-</span><span class="mi">1</span><span class="p">))</span>
+
+        <span class="n">pos_mask</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">stop_gradient</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="kp">equal</span><span class="p">(</span><span class="n">anchor_labels</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+
+        <span class="n">nr_valid</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">stop_gradient</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">valid_mask</span><span class="p">,</span> <span class="kp">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;num_valid_anchor&#39;</span><span class="p">)</span>
+
+        <span class="n">nr_pos</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">identity</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span><span class="n">pos_mask</span><span class="p">,</span> <span class="kp">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">),</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;num_pos_anchor&#39;</span><span class="p">)</span>
+
+        <span class="c1"># nr_pos is guaranteed &gt;0 in C4. But in FPN. even nr_valid could be 0.</span>
+
+        <span class="n">valid_anchor_labels</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">boolean_mask</span><span class="p">(</span><span class="n">anchor_labels</span><span class="p">,</span> <span class="n">valid_mask</span><span class="p">)</span>
+
+    <span class="n">valid_label_logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">boolean_mask</span><span class="p">(</span><span class="n">label_logits</span><span class="p">,</span> <span class="n">valid_mask</span><span class="p">)</span>
+
+    <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">name_scope</span><span class="p">(</span><span class="s1">&#39;label_metrics&#39;</span><span class="p">):</span>
+
+        <span class="n">valid_label_prob</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">valid_label_logits</span><span class="p">)</span>
+
+        <span class="n">summaries</span> <span class="o">=</span> <span class="p">[]</span>
+
+        <span class="k">with</span> <span class="n">tf</span><span class="o">.</span><span class="n">device</span><span class="p">(</span><span class="s1">&#39;/cpu:0&#39;</span><span class="p">):</span>
+
+            <span class="k">for</span> <span class="n">th</span> <span class="ow">in</span> <span class="p">[</span><span class="mf">0.5</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]:</span>
+
+                <span class="n">valid_prediction</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">valid_label_prob</span> <span class="o">&gt;</span> <span class="n">th</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+                <span class="n">nr_pos_prediction</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_sum</span><span class="p">(</span><span class="n">valid_prediction</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;num_pos_prediction&#39;</span><span class="p">)</span>
+
+                <span class="n">pos_prediction_corr</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">count_nonzero</span><span class="p">(</span>
+
+                    <span class="n">tf</span><span class="o">.</span><span class="kp">logical_and</span><span class="p">(</span>
+
+                        <span class="n">valid_label_prob</span> <span class="o">&gt;</span> <span class="n">th</span><span class="p">,</span>
+
+                        <span class="n">tf</span><span class="o">.</span><span class="kp">equal</span><span class="p">(</span><span class="n">valid_prediction</span><span class="p">,</span> <span class="n">valid_anchor_labels</span><span class="p">)),</span>
+
+                    <span class="kp">dtype</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">int32</span><span class="p">)</span>
+
+                <span class="n">placeholder</span> <span class="o">=</span> <span class="mf">0.5</span>   <span class="c1"># A small value will make summaries appear lower.</span>
+
+                <span class="n">recall</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truediv</span><span class="p">(</span><span class="n">pos_prediction_corr</span><span class="p">,</span> <span class="n">nr_pos</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+                <span class="n">recall</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">where</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="kp">equal</span><span class="p">(</span><span class="n">nr_pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">placeholder</span><span class="p">,</span> <span class="n">recall</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;recall_th{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">th</span><span class="p">))</span>
+
+                <span class="n">precision</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="n">truediv</span><span class="p">(</span><span class="n">pos_prediction_corr</span><span class="p">,</span> <span class="n">nr_pos_prediction</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">)</span>
+
+                <span class="n">precision</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">where</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="kp">equal</span><span class="p">(</span><span class="n">nr_pos_prediction</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span>
+
+                                     <span class="n">placeholder</span><span class="p">,</span> <span class="n">precision</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;precision_th{}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">th</span><span class="p">))</span>
+
+                <span class="n">summaries</span><span class="o">.</span><span class="n">extend</span><span class="p">([</span><span class="n">precision</span><span class="p">,</span> <span class="n">recall</span><span class="p">])</span>
+
+        <span class="n">add_moving_summary</span><span class="p">(</span><span class="o">*</span><span class="n">summaries</span><span class="p">)</span>
+
+    <span class="c1"># Per-level loss summaries in FPN may appear lower due to the use of a small placeholder.</span>
+
+    <span class="c1"># But the total RPN loss will be fine.  TODO make the summary op smarter</span>
+
+    <span class="n">placeholder</span> <span class="o">=</span> <span class="mf">0.</span>
+
+    <span class="n">label_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">sigmoid_cross_entropy_with_logits</span><span class="p">(</span>
+
+        <span class="n">labels</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">cast</span><span class="p">(</span><span class="n">valid_anchor_labels</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="n">float32</span><span class="p">),</span> <span class="n">logits</span><span class="o">=</span><span class="n">valid_label_logits</span><span class="p">)</span>
+
+    <span class="n">label_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_sum</span><span class="p">(</span><span class="n">label_loss</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">cfg</span><span class="o">.</span><span class="n">RPN</span><span class="o">.</span><span class="n">BATCH_PER_IM</span><span class="p">)</span>
+
+    <span class="n">label_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">where</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="kp">equal</span><span class="p">(</span><span class="n">nr_valid</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">placeholder</span><span class="p">,</span> <span class="n">label_loss</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;label_loss&#39;</span><span class="p">)</span>
+
+    <span class="n">pos_anchor_boxes</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">boolean_mask</span><span class="p">(</span><span class="n">anchor_boxes</span><span class="p">,</span> <span class="n">pos_mask</span><span class="p">)</span>
+
+    <span class="n">pos_box_logits</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">boolean_mask</span><span class="p">(</span><span class="n">box_logits</span><span class="p">,</span> <span class="n">pos_mask</span><span class="p">)</span>
+
+    <span class="n">delta</span> <span class="o">=</span> <span class="mf">1.0</span> <span class="o">/</span> <span class="mi">9</span>
+
+    <span class="n">box_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">huber_loss</span><span class="p">(</span>
+
+        <span class="n">pos_anchor_boxes</span><span class="p">,</span> <span class="n">pos_box_logits</span><span class="p">,</span> <span class="n">delta</span><span class="o">=</span><span class="n">delta</span><span class="p">,</span>
+
+        <span class="n">reduction</span><span class="o">=</span><span class="n">tf</span><span class="o">.</span><span class="n">losses</span><span class="o">.</span><span class="n">Reduction</span><span class="o">.</span><span class="n">SUM</span><span class="p">)</span> <span class="o">/</span> <span class="n">delta</span>
+
+    <span class="n">box_loss</span> <span class="o">=</span> <span class="n">box_loss</span> <span class="o">*</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">/</span> <span class="n">cfg</span><span class="o">.</span><span class="n">RPN</span><span class="o">.</span><span class="n">BATCH_PER_IM</span><span class="p">)</span>
+
+    <span class="n">box_loss</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">where</span><span class="p">(</span><span class="n">tf</span><span class="o">.</span><span class="kp">equal</span><span class="p">(</span><span class="n">nr_pos</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">placeholder</span><span class="p">,</span> <span class="n">box_loss</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;box_loss&#39;</span><span class="p">)</span>
+
+    <span class="n">add_moving_summary</span><span class="p">(</span><span class="n">label_loss</span><span class="p">,</span> <span class="n">box_loss</span><span class="p">,</span> <span class="n">nr_valid</span><span class="p">,</span> <span class="n">nr_pos</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="p">[</span><span class="n">label_loss</span><span class="p">,</span> <span class="n">box_loss</span><span class="p">]</span>
+
+<span class="nd">@under_name_scope</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">generate_rpn_proposals</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">scores</span><span class="p">,</span> <span class="n">img_shape</span><span class="p">,</span>
+
+                           <span class="n">pre_nms_topk</span><span class="p">,</span> <span class="n">post_nms_topk</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Sample RPN proposals by the following steps:</span>
+
+<span class="sd">    1. Pick top k1 by scores</span>
+
+<span class="sd">    2. NMS them</span>
+
+<span class="sd">    3. Pick top k2 by scores. Default k2 == k1, i.e. does not filter the NMS output.</span>
+
+<span class="sd">    Args:</span>
+
+<span class="sd">        boxes: nx4 float dtype, the proposal boxes. Decoded to floatbox already</span>
+
+<span class="sd">        scores: n float, the logits</span>
+
+<span class="sd">        img_shape: [h, w]</span>
+
+<span class="sd">        pre_nms_topk, post_nms_topk (int): See above.</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">        boxes: kx4 float</span>
+
+<span class="sd">        scores: k logits</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">assert</span> <span class="n">boxes</span><span class="o">.</span><span class="kp">shape</span><span class="o">.</span><span class="n">ndims</span> <span class="o">==</span> <span class="mi">2</span><span class="p">,</span> <span class="n">boxes</span><span class="o">.</span><span class="kp">shape</span>
+
+    <span class="k">if</span> <span class="n">post_nms_topk</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+
+        <span class="n">post_nms_topk</span> <span class="o">=</span> <span class="n">pre_nms_topk</span>
+
+    <span class="n">topk</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">minimum</span><span class="p">(</span><span class="n">pre_nms_topk</span><span class="p">,</span> <span class="n">tf</span><span class="o">.</span><span class="kp">size</span><span class="p">(</span><span class="n">scores</span><span class="p">))</span>
+
+    <span class="n">topk_scores</span><span class="p">,</span> <span class="n">topk_indices</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">nn</span><span class="o">.</span><span class="n">top_k</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">k</span><span class="o">=</span><span class="n">topk</span><span class="p">,</span> <span class="nb">sorted</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+
+    <span class="n">topk_boxes</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">boxes</span><span class="p">,</span> <span class="n">topk_indices</span><span class="p">)</span>
+
+    <span class="n">topk_boxes</span> <span class="o">=</span> <span class="n">clip_boxes</span><span class="p">(</span><span class="n">topk_boxes</span><span class="p">,</span> <span class="n">img_shape</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="n">cfg</span><span class="o">.</span><span class="n">RPN</span><span class="o">.</span><span class="n">MIN_SIZE</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
+
+        <span class="n">topk_boxes_x1y1x2y2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">reshape</span><span class="p">(</span><span class="n">topk_boxes</span><span class="p">,</span> <span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+        <span class="n">topk_boxes_x1y1</span><span class="p">,</span> <span class="n">topk_boxes_x2y2</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">split</span><span class="p">(</span><span class="n">topk_boxes_x1y1x2y2</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="c1"># nx1x2 each</span>
+
+        <span class="n">wbhb</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="kp">squeeze</span><span class="p">(</span><span class="n">topk_boxes_x2y2</span> <span class="o">-</span> <span class="n">topk_boxes_x1y1</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+        <span class="n">valid</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">reduce_all</span><span class="p">(</span><span class="n">wbhb</span> <span class="o">&gt;</span> <span class="n">cfg</span><span class="o">.</span><span class="n">RPN</span><span class="o">.</span><span class="n">MIN_SIZE</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>  <span class="c1"># n,</span>
+
+        <span class="n">topk_valid_boxes</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">boolean_mask</span><span class="p">(</span><span class="n">topk_boxes</span><span class="p">,</span> <span class="n">valid</span><span class="p">)</span>
+
+        <span class="n">topk_valid_scores</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">boolean_mask</span><span class="p">(</span><span class="n">topk_scores</span><span class="p">,</span> <span class="n">valid</span><span class="p">)</span>
+
+    <span class="k">else</span><span class="p">:</span>
+
+        <span class="n">topk_valid_boxes</span> <span class="o">=</span> <span class="n">topk_boxes</span>
+
+        <span class="n">topk_valid_scores</span> <span class="o">=</span> <span class="n">topk_scores</span>
+
+    <span class="n">nms_indices</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">image</span><span class="o">.</span><span class="n">non_max_suppression</span><span class="p">(</span>
+
+        <span class="n">topk_valid_boxes</span><span class="p">,</span>
+
+        <span class="n">topk_valid_scores</span><span class="p">,</span>
+
+        <span class="n">max_output_size</span><span class="o">=</span><span class="n">post_nms_topk</span><span class="p">,</span>
+
+        <span class="n">iou_threshold</span><span class="o">=</span><span class="n">cfg</span><span class="o">.</span><span class="n">RPN</span><span class="o">.</span><span class="n">PROPOSAL_NMS_THRESH</span><span class="p">)</span>
+
+    <span class="n">proposal_boxes</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">topk_valid_boxes</span><span class="p">,</span> <span class="n">nms_indices</span><span class="p">)</span>
+
+    <span class="n">proposal_scores</span> <span class="o">=</span> <span class="n">tf</span><span class="o">.</span><span class="n">gather</span><span class="p">(</span><span class="n">topk_valid_scores</span><span class="p">,</span> <span class="n">nms_indices</span><span class="p">)</span>
+
+    <span class="n">tf</span><span class="o">.</span><span class="n">sigmoid</span><span class="p">(</span><span class="n">proposal_scores</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;probs&#39;</span><span class="p">)</span>  <span class="c1"># for visualization</span>
+
+    <span class="k">return</span> <span class="n">tf</span><span class="o">.</span><span class="n">stop_gradient</span><span class="p">(</span><span class="n">proposal_boxes</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;boxes&#39;</span><span class="p">),</span> <span class="n">tf</span><span class="o">.</span><span class="n">stop_gradient</span><span class="p">(</span><span class="n">proposal_scores</span><span class="p">,</span> <span class="n">name</span><span class="o">=</span><span class="s1">&#39;scores&#39;</span><span class="p">)</span>
+
+<span class="nd">@memoized</span>
+
+<span class="k">def</span> <span class="nf">get_all_anchors</span><span class="p">(</span><span class="o">*</span><span class="p">,</span> <span class="n">stride</span><span class="p">,</span> <span class="n">sizes</span><span class="p">,</span> <span class="n">ratios</span><span class="p">,</span> <span class="n">max_size</span><span class="p">):</span>
+
+    <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">    Get all anchors in the largest possible image, shifted, floatbox</span>
+
+<span class="sd">    Args:</span>
+
+<span class="sd">        stride (int): the stride of anchors.</span>
+
+<span class="sd">        sizes (tuple[int]): the sizes (sqrt area) of anchors</span>
+
+<span class="sd">        ratios (tuple[int]): the aspect ratios of anchors</span>
+
+<span class="sd">        max_size (int): maximum size of input image</span>
+
+<span class="sd">    Returns:</span>
+
+<span class="sd">        anchors: SxSxNUM_ANCHORx4, where S == ceil(MAX_SIZE/STRIDE), floatbox</span>
+
+<span class="sd">        The layout in the NUM_ANCHOR dim is NUM_RATIO x NUM_SIZE.</span>
+
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="c1"># Generates a NAx4 matrix of anchor boxes in (x1, y1, x2, y2) format. Anchors</span>
+
+    <span class="c1"># are centered on 0, have sqrt areas equal to the specified sizes, and aspect ratios as given.</span>
+
+    <span class="n">anchors</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">for</span> <span class="n">sz</span> <span class="ow">in</span> <span class="n">sizes</span><span class="p">:</span>
+
+        <span class="k">for</span> <span class="n">ratio</span> <span class="ow">in</span> <span class="n">ratios</span><span class="p">:</span>
+
+            <span class="n">w</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">sqrt</span><span class="p">(</span><span class="n">sz</span> <span class="o">*</span> <span class="n">sz</span> <span class="o">/</span> <span class="n">ratio</span><span class="p">)</span>
+
+            <span class="n">h</span> <span class="o">=</span> <span class="n">ratio</span> <span class="o">*</span> <span class="n">w</span>
+
+            <span class="n">anchors</span><span class="o">.</span><span class="kp">append</span><span class="p">([</span><span class="o">-</span><span class="n">w</span><span class="p">,</span> <span class="o">-</span><span class="n">h</span><span class="p">,</span> <span class="n">w</span><span class="p">,</span> <span class="n">h</span><span class="p">])</span>
+
+    <span class="n">cell_anchors</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">asarray</span><span class="p">(</span><span class="n">anchors</span><span class="p">)</span> <span class="o">*</span> <span class="mf">0.5</span>
+
+    <span class="n">field_size</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="kp">ceil</span><span class="p">(</span><span class="n">max_size</span> <span class="o">/</span> <span class="n">stride</span><span class="p">))</span>
+
+    <span class="n">shifts</span> <span class="o">=</span> <span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="kp">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="n">field_size</span><span class="p">)</span> <span class="o">*</span> <span class="n">stride</span><span class="p">)</span><span class="o">.</span><span class="kp">astype</span><span class="p">(</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+
+    <span class="n">shift_x</span><span class="p">,</span> <span class="n">shift_y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">meshgrid</span><span class="p">(</span><span class="n">shifts</span><span class="p">,</span> <span class="n">shifts</span><span class="p">)</span>
+
+    <span class="n">shift_x</span> <span class="o">=</span> <span class="n">shift_x</span><span class="o">.</span><span class="kp">flatten</span><span class="p">()</span>
+
+    <span class="n">shift_y</span> <span class="o">=</span> <span class="n">shift_y</span><span class="o">.</span><span class="kp">flatten</span><span class="p">()</span>
+
+    <span class="n">shifts</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="kp">vstack</span><span class="p">((</span><span class="n">shift_x</span><span class="p">,</span> <span class="n">shift_y</span><span class="p">,</span> <span class="n">shift_x</span><span class="p">,</span> <span class="n">shift_y</span><span class="p">))</span><span class="o">.</span><span class="kp">transpose</span><span class="p">()</span>
+
+    <span class="c1"># Kx4, K = field_size * field_size</span>
+
+    <span class="n">K</span> <span class="o">=</span> <span class="n">shifts</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">A</span> <span class="o">=</span> <span class="n">cell_anchors</span><span class="o">.</span><span class="kp">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+
+    <span class="n">field_of_anchors</span> <span class="o">=</span> <span class="n">cell_anchors</span><span class="o">.</span><span class="kp">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span> <span class="o">+</span> <span class="n">shifts</span><span class="o">.</span><span class="kp">reshape</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="n">K</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span><span class="o">.</span><span class="kp">transpose</span><span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
+
+    <span class="n">field_of_anchors</span> <span class="o">=</span> <span class="n">field_of_anchors</span><span class="o">.</span><span class="kp">reshape</span><span class="p">((</span><span class="n">field_size</span><span class="p">,</span> <span class="n">field_size</span><span class="p">,</span> <span class="n">A</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
+
+    <span class="c1"># FSxFSxAx4</span>
+
+    <span class="c1"># Many rounding happens inside the anchor code anyway</span>
+
+    <span class="c1"># assert np.all(field_of_anchors == field_of_anchors.astype(&#39;int32&#39;))</span>
+
+    <span class="n">field_of_anchors</span> <span class="o">=</span> <span class="n">field_of_anchors</span><span class="o">.</span><span class="kp">astype</span><span class="p">(</span><span class="s2">&quot;float32&quot;</span><span class="p">)</span>
+
+    <span class="k">return</span> <span class="n">field_of_anchors</span>
+</pre></div>
+
+
+</details>
+<h2 id="functions">Functions</h2>
+<h3 id="generate_rpn_proposals">generate_rpn_proposals</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">generate_rpn_proposals</span><span class="p">(</span>
+    <span class="n">boxes</span><span class="p">,</span>
+    <span class="n">scores</span><span class="p">,</span>
+    <span class="n">img_shape</span><span class="p">,</span>
+    <span class="n">pre_nms_topk</span><span class="p">,</span>
+    <span class="n">post_nms_topk</span><span class="o">=</span><span class="kc">None</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Sample RPN proposals by the following steps:
+1. Pick top k1 by scores
+2. NMS them
+3. Pick top k2 by scores. Default k2 == k1, i.e. does not filter the NMS output.</p>
+<p>Args:
+    boxes: nx4 float dtype, the proposal boxes. Decoded to floatbox already
+    scores: n float, the logits
+    img_shape: [h, w]
+    pre_nms_topk, post_nms_topk (int): See above.</p>
+<p>Returns:
+    boxes: kx4 float
+    scores: k logits</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span>@<span class="nv">under_name_scope</span><span class="ss">()</span>
+
+<span class="nv">def</span> <span class="nv">generate_rpn_proposals</span><span class="ss">(</span><span class="nv">boxes</span>, <span class="nv">scores</span>, <span class="nv">img_shape</span>,
+
+                           <span class="nv">pre_nms_topk</span>, <span class="nv">post_nms_topk</span><span class="o">=</span><span class="nv">None</span><span class="ss">)</span>:
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="nv">Sample</span> <span class="nv">RPN</span> <span class="nv">proposals</span> <span class="nv">by</span> <span class="nv">the</span> <span class="nv">following</span> <span class="nv">steps</span>:
+
+    <span class="mi">1</span>. <span class="nv">Pick</span> <span class="nv">top</span> <span class="nv">k1</span> <span class="nv">by</span> <span class="nv">scores</span>
+
+    <span class="mi">2</span>. <span class="nv">NMS</span> <span class="nv">them</span>
+
+    <span class="mi">3</span>. <span class="nv">Pick</span> <span class="nv">top</span> <span class="nv">k2</span> <span class="nv">by</span> <span class="nv">scores</span>. <span class="nv">Default</span> <span class="nv">k2</span> <span class="o">==</span> <span class="nv">k1</span>, <span class="nv">i</span>.<span class="nv">e</span>. <span class="nv">does</span> <span class="nv">not</span> <span class="nv">filter</span> <span class="nv">the</span> <span class="nv">NMS</span> <span class="nv">output</span>.
+
+    <span class="nv">Args</span>:
+
+        <span class="nv">boxes</span>: <span class="nv">nx4</span> <span class="nv">float</span> <span class="nv">dtype</span>, <span class="nv">the</span> <span class="nv">proposal</span> <span class="nv">boxes</span>. <span class="nv">Decoded</span> <span class="nv">to</span> <span class="nv">floatbox</span> <span class="nv">already</span>
+
+        <span class="nv">scores</span>: <span class="nv">n</span> <span class="nv">float</span>, <span class="nv">the</span> <span class="nv">logits</span>
+
+        <span class="nv">img_shape</span>: [<span class="nv">h</span>, <span class="nv">w</span>]
+
+        <span class="nv">pre_nms_topk</span>, <span class="nv">post_nms_topk</span> <span class="ss">(</span><span class="nv">int</span><span class="ss">)</span>: <span class="nv">See</span> <span class="nv">above</span>.
+
+    <span class="nv">Returns</span>:
+
+        <span class="nv">boxes</span>: <span class="nv">kx4</span> <span class="nv">float</span>
+
+        <span class="nv">scores</span>: <span class="nv">k</span> <span class="nv">logits</span>
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="nv">assert</span> <span class="nv">boxes</span>.<span class="nv">shape</span>.<span class="nv">ndims</span> <span class="o">==</span> <span class="mi">2</span>, <span class="nv">boxes</span>.<span class="nv">shape</span>
+
+    <span class="k">if</span> <span class="nv">post_nms_topk</span> <span class="nv">is</span> <span class="nv">None</span>:
+
+        <span class="nv">post_nms_topk</span> <span class="o">=</span> <span class="nv">pre_nms_topk</span>
+
+    <span class="nv">topk</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">minimum</span><span class="ss">(</span><span class="nv">pre_nms_topk</span>, <span class="nv">tf</span>.<span class="nv">size</span><span class="ss">(</span><span class="nv">scores</span><span class="ss">))</span>
+
+    <span class="nv">topk_scores</span>, <span class="nv">topk_indices</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">nn</span>.<span class="nv">top_k</span><span class="ss">(</span><span class="nv">scores</span>, <span class="nv">k</span><span class="o">=</span><span class="nv">topk</span>, <span class="nv">sorted</span><span class="o">=</span><span class="nv">False</span><span class="ss">)</span>
+
+    <span class="nv">topk_boxes</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">gather</span><span class="ss">(</span><span class="nv">boxes</span>, <span class="nv">topk_indices</span><span class="ss">)</span>
+
+    <span class="nv">topk_boxes</span> <span class="o">=</span> <span class="nv">clip_boxes</span><span class="ss">(</span><span class="nv">topk_boxes</span>, <span class="nv">img_shape</span><span class="ss">)</span>
+
+    <span class="k">if</span> <span class="nv">cfg</span>.<span class="nv">RPN</span>.<span class="nv">MIN_SIZE</span> <span class="o">&gt;</span> <span class="mi">0</span>:
+
+        <span class="nv">topk_boxes_x1y1x2y2</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">reshape</span><span class="ss">(</span><span class="nv">topk_boxes</span>, <span class="ss">(</span><span class="o">-</span><span class="mi">1</span>, <span class="mi">2</span>, <span class="mi">2</span><span class="ss">))</span>
+
+        <span class="nv">topk_boxes_x1y1</span>, <span class="nv">topk_boxes_x2y2</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">split</span><span class="ss">(</span><span class="nv">topk_boxes_x1y1x2y2</span>, <span class="mi">2</span>, <span class="nv">axis</span><span class="o">=</span><span class="mi">1</span><span class="ss">)</span>
+
+        # <span class="nv">nx1x2</span> <span class="nv">each</span>
+
+        <span class="nv">wbhb</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">squeeze</span><span class="ss">(</span><span class="nv">topk_boxes_x2y2</span> <span class="o">-</span> <span class="nv">topk_boxes_x1y1</span>, <span class="nv">axis</span><span class="o">=</span><span class="mi">1</span><span class="ss">)</span>
+
+        <span class="nv">valid</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">reduce_all</span><span class="ss">(</span><span class="nv">wbhb</span> <span class="o">&gt;</span> <span class="nv">cfg</span>.<span class="nv">RPN</span>.<span class="nv">MIN_SIZE</span>, <span class="nv">axis</span><span class="o">=</span><span class="mi">1</span><span class="ss">)</span>  # <span class="nv">n</span>,
+
+        <span class="nv">topk_valid_boxes</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">boolean_mask</span><span class="ss">(</span><span class="nv">topk_boxes</span>, <span class="nv">valid</span><span class="ss">)</span>
+
+        <span class="nv">topk_valid_scores</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">boolean_mask</span><span class="ss">(</span><span class="nv">topk_scores</span>, <span class="nv">valid</span><span class="ss">)</span>
+
+    <span class="k">else</span>:
+
+        <span class="nv">topk_valid_boxes</span> <span class="o">=</span> <span class="nv">topk_boxes</span>
+
+        <span class="nv">topk_valid_scores</span> <span class="o">=</span> <span class="nv">topk_scores</span>
+
+    <span class="nv">nms_indices</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">image</span>.<span class="nv">non_max_suppression</span><span class="ss">(</span>
+
+        <span class="nv">topk_valid_boxes</span>,
+
+        <span class="nv">topk_valid_scores</span>,
+
+        <span class="nv">max_output_size</span><span class="o">=</span><span class="nv">post_nms_topk</span>,
+
+        <span class="nv">iou_threshold</span><span class="o">=</span><span class="nv">cfg</span>.<span class="nv">RPN</span>.<span class="nv">PROPOSAL_NMS_THRESH</span><span class="ss">)</span>
+
+    <span class="nv">proposal_boxes</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">gather</span><span class="ss">(</span><span class="nv">topk_valid_boxes</span>, <span class="nv">nms_indices</span><span class="ss">)</span>
+
+    <span class="nv">proposal_scores</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">gather</span><span class="ss">(</span><span class="nv">topk_valid_scores</span>, <span class="nv">nms_indices</span><span class="ss">)</span>
+
+    <span class="nv">tf</span>.<span class="nv">sigmoid</span><span class="ss">(</span><span class="nv">proposal_scores</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">probs</span><span class="s1">&#39;</span><span class="ss">)</span>  # <span class="k">for</span> <span class="nv">visualization</span>
+
+    <span class="k">return</span> <span class="nv">tf</span>.<span class="nv">stop_gradient</span><span class="ss">(</span><span class="nv">proposal_boxes</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">boxes</span><span class="s1">&#39;</span><span class="ss">)</span>, <span class="nv">tf</span>.<span class="nv">stop_gradient</span><span class="ss">(</span><span class="nv">proposal_scores</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">scores</span><span class="s1">&#39;</span><span class="ss">)</span>
+</pre></div>
+
+
+</details>
+<h3 id="get_all_anchors">get_all_anchors</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">get_all_anchors</span><span class="p">(</span>
+    <span class="o">*</span><span class="p">,</span>
+    <span class="n">stride</span><span class="p">,</span>
+    <span class="n">sizes</span><span class="p">,</span>
+    <span class="n">ratios</span><span class="p">,</span>
+    <span class="n">max_size</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Get all anchors in the largest possible image, shifted, floatbox
+Args:
+    stride (int): the stride of anchors.
+    sizes (tuple[int]): the sizes (sqrt area) of anchors
+    ratios (tuple[int]): the aspect ratios of anchors
+    max_size (int): maximum size of input image</p>
+<p>Returns:
+    anchors: SxSxNUM_ANCHORx4, where S == ceil(MAX_SIZE/STRIDE), floatbox
+    The layout in the NUM_ANCHOR dim is NUM_RATIO x NUM_SIZE.</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span>@<span class="nv">memoized</span>
+
+<span class="nv">def</span> <span class="nv">get_all_anchors</span><span class="ss">(</span><span class="o">*</span>, <span class="nv">stride</span>, <span class="nv">sizes</span>, <span class="nv">ratios</span>, <span class="nv">max_size</span><span class="ss">)</span>:
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="nv">Get</span> <span class="nv">all</span> <span class="nv">anchors</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">largest</span> <span class="nv">possible</span> <span class="nv">image</span>, <span class="nv">shifted</span>, <span class="nv">floatbox</span>
+
+    <span class="nv">Args</span>:
+
+        <span class="nv">stride</span> <span class="ss">(</span><span class="nv">int</span><span class="ss">)</span>: <span class="nv">the</span> <span class="nv">stride</span> <span class="nv">of</span> <span class="nv">anchors</span>.
+
+        <span class="nv">sizes</span> <span class="ss">(</span><span class="nv">tuple</span>[<span class="nv">int</span>]<span class="ss">)</span>: <span class="nv">the</span> <span class="nv">sizes</span> <span class="ss">(</span><span class="nv">sqrt</span> <span class="nv">area</span><span class="ss">)</span> <span class="nv">of</span> <span class="nv">anchors</span>
+
+        <span class="nv">ratios</span> <span class="ss">(</span><span class="nv">tuple</span>[<span class="nv">int</span>]<span class="ss">)</span>: <span class="nv">the</span> <span class="nv">aspect</span> <span class="nv">ratios</span> <span class="nv">of</span> <span class="nv">anchors</span>
+
+        <span class="nv">max_size</span> <span class="ss">(</span><span class="nv">int</span><span class="ss">)</span>: <span class="nv">maximum</span> <span class="nv">size</span> <span class="nv">of</span> <span class="nv">input</span> <span class="nv">image</span>
+
+    <span class="nv">Returns</span>:
+
+        <span class="nv">anchors</span>: <span class="nv">SxSxNUM_ANCHORx4</span>, <span class="nv">where</span> <span class="nv">S</span> <span class="o">==</span> <span class="nv">ceil</span><span class="ss">(</span><span class="nv">MAX_SIZE</span><span class="o">/</span><span class="nv">STRIDE</span><span class="ss">)</span>, <span class="nv">floatbox</span>
+
+        <span class="nv">The</span> <span class="nv">layout</span> <span class="nv">in</span> <span class="nv">the</span> <span class="nv">NUM_ANCHOR</span> <span class="nv">dim</span> <span class="nv">is</span> <span class="nv">NUM_RATIO</span> <span class="nv">x</span> <span class="nv">NUM_SIZE</span>.
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    # <span class="nv">Generates</span> <span class="nv">a</span> <span class="nv">NAx4</span> <span class="nv">matrix</span> <span class="nv">of</span> <span class="nv">anchor</span> <span class="nv">boxes</span> <span class="nv">in</span> <span class="ss">(</span><span class="nv">x1</span>, <span class="nv">y1</span>, <span class="nv">x2</span>, <span class="nv">y2</span><span class="ss">)</span> <span class="nv">format</span>. <span class="nv">Anchors</span>
+
+    # <span class="nv">are</span> <span class="nv">centered</span> <span class="nv">on</span> <span class="mi">0</span>, <span class="nv">have</span> <span class="nv">sqrt</span> <span class="nv">areas</span> <span class="nv">equal</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">specified</span> <span class="nv">sizes</span>, <span class="nv">and</span> <span class="nv">aspect</span> <span class="nv">ratios</span> <span class="nv">as</span> <span class="nv">given</span>.
+
+    <span class="nv">anchors</span> <span class="o">=</span> []
+
+    <span class="k">for</span> <span class="nv">sz</span> <span class="nv">in</span> <span class="nv">sizes</span>:
+
+        <span class="k">for</span> <span class="nv">ratio</span> <span class="nv">in</span> <span class="nv">ratios</span>:
+
+            <span class="nv">w</span> <span class="o">=</span> <span class="nv">np</span>.<span class="nv">sqrt</span><span class="ss">(</span><span class="nv">sz</span> <span class="o">*</span> <span class="nv">sz</span> <span class="o">/</span> <span class="nv">ratio</span><span class="ss">)</span>
+
+            <span class="nv">h</span> <span class="o">=</span> <span class="nv">ratio</span> <span class="o">*</span> <span class="nv">w</span>
+
+            <span class="nv">anchors</span>.<span class="nv">append</span><span class="ss">(</span>[<span class="o">-</span><span class="nv">w</span>, <span class="o">-</span><span class="nv">h</span>, <span class="nv">w</span>, <span class="nv">h</span>]<span class="ss">)</span>
+
+    <span class="nv">cell_anchors</span> <span class="o">=</span> <span class="nv">np</span>.<span class="nv">asarray</span><span class="ss">(</span><span class="nv">anchors</span><span class="ss">)</span> <span class="o">*</span> <span class="mi">0</span>.<span class="mi">5</span>
+
+    <span class="nv">field_size</span> <span class="o">=</span> <span class="nv">int</span><span class="ss">(</span><span class="nv">np</span>.<span class="nv">ceil</span><span class="ss">(</span><span class="nv">max_size</span> <span class="o">/</span> <span class="nv">stride</span><span class="ss">))</span>
+
+    <span class="nv">shifts</span> <span class="o">=</span> <span class="ss">(</span><span class="nv">np</span>.<span class="nv">arange</span><span class="ss">(</span><span class="mi">0</span>, <span class="nv">field_size</span><span class="ss">)</span> <span class="o">*</span> <span class="nv">stride</span><span class="ss">)</span>.<span class="nv">astype</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">float32</span><span class="s2">&quot;</span><span class="ss">)</span>
+
+    <span class="nv">shift_x</span>, <span class="nv">shift_y</span> <span class="o">=</span> <span class="nv">np</span>.<span class="nv">meshgrid</span><span class="ss">(</span><span class="nv">shifts</span>, <span class="nv">shifts</span><span class="ss">)</span>
+
+    <span class="nv">shift_x</span> <span class="o">=</span> <span class="nv">shift_x</span>.<span class="nv">flatten</span><span class="ss">()</span>
+
+    <span class="nv">shift_y</span> <span class="o">=</span> <span class="nv">shift_y</span>.<span class="nv">flatten</span><span class="ss">()</span>
+
+    <span class="nv">shifts</span> <span class="o">=</span> <span class="nv">np</span>.<span class="nv">vstack</span><span class="ss">((</span><span class="nv">shift_x</span>, <span class="nv">shift_y</span>, <span class="nv">shift_x</span>, <span class="nv">shift_y</span><span class="ss">))</span>.<span class="nv">transpose</span><span class="ss">()</span>
+
+    # <span class="nv">Kx4</span>, <span class="nv">K</span> <span class="o">=</span> <span class="nv">field_size</span> <span class="o">*</span> <span class="nv">field_size</span>
+
+    <span class="nv">K</span> <span class="o">=</span> <span class="nv">shifts</span>.<span class="nv">shape</span>[<span class="mi">0</span>]
+
+    <span class="nv">A</span> <span class="o">=</span> <span class="nv">cell_anchors</span>.<span class="nv">shape</span>[<span class="mi">0</span>]
+
+    <span class="nv">field_of_anchors</span> <span class="o">=</span> <span class="nv">cell_anchors</span>.<span class="nv">reshape</span><span class="ss">((</span><span class="mi">1</span>, <span class="nv">A</span>, <span class="mi">4</span><span class="ss">))</span> <span class="o">+</span> <span class="nv">shifts</span>.<span class="nv">reshape</span><span class="ss">((</span><span class="mi">1</span>, <span class="nv">K</span>, <span class="mi">4</span><span class="ss">))</span>.<span class="nv">transpose</span><span class="ss">((</span><span class="mi">1</span>, <span class="mi">0</span>, <span class="mi">2</span><span class="ss">))</span>
+
+    <span class="nv">field_of_anchors</span> <span class="o">=</span> <span class="nv">field_of_anchors</span>.<span class="nv">reshape</span><span class="ss">((</span><span class="nv">field_size</span>, <span class="nv">field_size</span>, <span class="nv">A</span>, <span class="mi">4</span><span class="ss">))</span>
+
+    # <span class="nv">FSxFSxAx4</span>
+
+    # <span class="nv">Many</span> <span class="nv">rounding</span> <span class="nv">happens</span> <span class="nv">inside</span> <span class="nv">the</span> <span class="nv">anchor</span> <span class="nv">code</span> <span class="nv">anyway</span>
+
+    # <span class="nv">assert</span> <span class="nv">np</span>.<span class="nv">all</span><span class="ss">(</span><span class="nv">field_of_anchors</span> <span class="o">==</span> <span class="nv">field_of_anchors</span>.<span class="nv">astype</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">int32</span><span class="s1">&#39;</span><span class="ss">))</span>
+
+    <span class="nv">field_of_anchors</span> <span class="o">=</span> <span class="nv">field_of_anchors</span>.<span class="nv">astype</span><span class="ss">(</span><span class="s2">&quot;</span><span class="s">float32</span><span class="s2">&quot;</span><span class="ss">)</span>
+
+    <span class="k">return</span> <span class="nv">field_of_anchors</span>
+</pre></div>
+
+
+</details>
+<h3 id="rpn_head">rpn_head</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">rpn_head</span><span class="p">(</span>
+    <span class="n">featuremap</span><span class="p">,</span>
+    <span class="n">channel</span><span class="p">,</span>
+    <span class="n">num_anchors</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Returns:
+label_logits: fHxfWxNA
+box_logits: fHxfWxNAx4</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span>@<span class="nv">layer_register</span><span class="ss">(</span><span class="nv">log_shape</span><span class="o">=</span><span class="nv">True</span><span class="ss">)</span>
+
+@<span class="nv">auto_reuse_variable_scope</span>
+
+<span class="nv">def</span> <span class="nv">rpn_head</span><span class="ss">(</span><span class="nv">featuremap</span>, <span class="nv">channel</span>, <span class="nv">num_anchors</span><span class="ss">)</span>:
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="nv">Returns</span>:
+
+        <span class="nv">label_logits</span>: <span class="nv">fHxfWxNA</span>
+
+        <span class="nv">box_logits</span>: <span class="nv">fHxfWxNAx4</span>
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="nv">with</span> <span class="nv">argscope</span><span class="ss">(</span><span class="nv">Conv2D</span>, <span class="nv">data_format</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">channels_first</span><span class="s1">&#39;</span>,
+
+                  <span class="nv">kernel_initializer</span><span class="o">=</span><span class="nv">tf</span>.<span class="nv">random_normal_initializer</span><span class="ss">(</span><span class="nv">stddev</span><span class="o">=</span><span class="mi">0</span>.<span class="mi">01</span><span class="ss">))</span>:
+
+        <span class="nv">hidden</span> <span class="o">=</span> <span class="nv">Conv2D</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">conv0</span><span class="s1">&#39;</span>, <span class="nv">featuremap</span>, <span class="nv">channel</span>, <span class="mi">3</span>, <span class="nv">activation</span><span class="o">=</span><span class="nv">tf</span>.<span class="nv">nn</span>.<span class="nv">relu</span><span class="ss">)</span>
+
+        <span class="nv">label_logits</span> <span class="o">=</span> <span class="nv">Conv2D</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">class</span><span class="s1">&#39;</span>, <span class="nv">hidden</span>, <span class="nv">num_anchors</span>, <span class="mi">1</span><span class="ss">)</span>
+
+        <span class="nv">box_logits</span> <span class="o">=</span> <span class="nv">Conv2D</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">box</span><span class="s1">&#39;</span>, <span class="nv">hidden</span>, <span class="mi">4</span> <span class="o">*</span> <span class="nv">num_anchors</span>, <span class="mi">1</span><span class="ss">)</span>
+
+        # <span class="mi">1</span>, <span class="nv">NA</span><span class="ss">(</span><span class="o">*</span><span class="mi">4</span><span class="ss">)</span>, <span class="nv">im</span><span class="o">/</span><span class="mi">16</span>, <span class="nv">im</span><span class="o">/</span><span class="mi">16</span> <span class="ss">(</span><span class="nv">NCHW</span><span class="ss">)</span>
+
+        <span class="nv">label_logits</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">transpose</span><span class="ss">(</span><span class="nv">label_logits</span>, [<span class="mi">0</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">1</span>]<span class="ss">)</span>  # <span class="mi">1</span><span class="nv">xfHxfWxNA</span>
+
+        <span class="nv">label_logits</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">squeeze</span><span class="ss">(</span><span class="nv">label_logits</span>, <span class="mi">0</span><span class="ss">)</span>  # <span class="nv">fHxfWxNA</span>
+
+        <span class="nv">shp</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">shape</span><span class="ss">(</span><span class="nv">box_logits</span><span class="ss">)</span>  # <span class="mi">1</span><span class="nv">x</span><span class="ss">(</span><span class="nv">NAx4</span><span class="ss">)</span><span class="nv">xfHxfW</span>
+
+        <span class="nv">box_logits</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">transpose</span><span class="ss">(</span><span class="nv">box_logits</span>, [<span class="mi">0</span>, <span class="mi">2</span>, <span class="mi">3</span>, <span class="mi">1</span>]<span class="ss">)</span>  # <span class="mi">1</span><span class="nv">xfHxfWx</span><span class="ss">(</span><span class="nv">NAx4</span><span class="ss">)</span>
+
+        <span class="nv">box_logits</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">reshape</span><span class="ss">(</span><span class="nv">box_logits</span>, <span class="nv">tf</span>.<span class="nv">stack</span><span class="ss">(</span>[<span class="nv">shp</span>[<span class="mi">2</span>], <span class="nv">shp</span>[<span class="mi">3</span>], <span class="nv">num_anchors</span>, <span class="mi">4</span>]<span class="ss">))</span>  # <span class="nv">fHxfWxNAx4</span>
+
+    <span class="k">return</span> <span class="nv">label_logits</span>, <span class="nv">box_logits</span>
+</pre></div>
+
+
+</details>
+<h3 id="rpn_losses">rpn_losses</h3>
+<div class="codehilite"><pre><span></span><span class="k">def</span> <span class="nf">rpn_losses</span><span class="p">(</span>
+    <span class="n">anchor_labels</span><span class="p">,</span>
+    <span class="n">anchor_boxes</span><span class="p">,</span>
+    <span class="n">label_logits</span><span class="p">,</span>
+    <span class="n">box_logits</span>
+<span class="p">)</span>
+</pre></div>
+
+
+<p>Args:
+    anchor_labels: fHxfWxNA
+    anchor_boxes: fHxfWxNAx4, encoded
+    label_logits:  fHxfWxNA
+    box_logits: fHxfWxNAx4</p>
+<p>Returns:
+    label_loss, box_loss</p>
+<details class="example"><summary>View Source</summary><div class="codehilite"><pre><span></span>@<span class="nv">under_name_scope</span><span class="ss">()</span>
+
+<span class="nv">def</span> <span class="nv">rpn_losses</span><span class="ss">(</span><span class="nv">anchor_labels</span>, <span class="nv">anchor_boxes</span>, <span class="nv">label_logits</span>, <span class="nv">box_logits</span><span class="ss">)</span>:
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="nv">Args</span>:
+
+        <span class="nv">anchor_labels</span>: <span class="nv">fHxfWxNA</span>
+
+        <span class="nv">anchor_boxes</span>: <span class="nv">fHxfWxNAx4</span>, <span class="nv">encoded</span>
+
+        <span class="nv">label_logits</span>:  <span class="nv">fHxfWxNA</span>
+
+        <span class="nv">box_logits</span>: <span class="nv">fHxfWxNAx4</span>
+
+    <span class="nv">Returns</span>:
+
+        <span class="nv">label_loss</span>, <span class="nv">box_loss</span>
+
+    <span class="s2">&quot;&quot;&quot;</span>
+
+    <span class="nv">with</span> <span class="nv">tf</span>.<span class="nv">device</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">/cpu:0</span><span class="s1">&#39;</span><span class="ss">)</span>:
+
+        <span class="nv">valid_mask</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">stop_gradient</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">not_equal</span><span class="ss">(</span><span class="nv">anchor_labels</span>, <span class="o">-</span><span class="mi">1</span><span class="ss">))</span>
+
+        <span class="nv">pos_mask</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">stop_gradient</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">equal</span><span class="ss">(</span><span class="nv">anchor_labels</span>, <span class="mi">1</span><span class="ss">))</span>
+
+        <span class="nv">nr_valid</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">stop_gradient</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">count_nonzero</span><span class="ss">(</span><span class="nv">valid_mask</span>, <span class="nv">dtype</span><span class="o">=</span><span class="nv">tf</span>.<span class="nv">int32</span><span class="ss">)</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">num_valid_anchor</span><span class="s1">&#39;</span><span class="ss">)</span>
+
+        <span class="nv">nr_pos</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">identity</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">count_nonzero</span><span class="ss">(</span><span class="nv">pos_mask</span>, <span class="nv">dtype</span><span class="o">=</span><span class="nv">tf</span>.<span class="nv">int32</span><span class="ss">)</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">num_pos_anchor</span><span class="s1">&#39;</span><span class="ss">)</span>
+
+        # <span class="nv">nr_pos</span> <span class="nv">is</span> <span class="nv">guaranteed</span> <span class="o">&gt;</span><span class="mi">0</span> <span class="nv">in</span> <span class="nv">C4</span>. <span class="nv">But</span> <span class="nv">in</span> <span class="nv">FPN</span>. <span class="nv">even</span> <span class="nv">nr_valid</span> <span class="nv">could</span> <span class="nv">be</span> <span class="mi">0</span>.
+
+        <span class="nv">valid_anchor_labels</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">boolean_mask</span><span class="ss">(</span><span class="nv">anchor_labels</span>, <span class="nv">valid_mask</span><span class="ss">)</span>
+
+    <span class="nv">valid_label_logits</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">boolean_mask</span><span class="ss">(</span><span class="nv">label_logits</span>, <span class="nv">valid_mask</span><span class="ss">)</span>
+
+    <span class="nv">with</span> <span class="nv">tf</span>.<span class="nv">name_scope</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">label_metrics</span><span class="s1">&#39;</span><span class="ss">)</span>:
+
+        <span class="nv">valid_label_prob</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">nn</span>.<span class="nv">sigmoid</span><span class="ss">(</span><span class="nv">valid_label_logits</span><span class="ss">)</span>
+
+        <span class="nv">summaries</span> <span class="o">=</span> []
+
+        <span class="nv">with</span> <span class="nv">tf</span>.<span class="nv">device</span><span class="ss">(</span><span class="s1">&#39;</span><span class="s">/cpu:0</span><span class="s1">&#39;</span><span class="ss">)</span>:
+
+            <span class="k">for</span> <span class="nv">th</span> <span class="nv">in</span> [<span class="mi">0</span>.<span class="mi">5</span>, <span class="mi">0</span>.<span class="mi">2</span>, <span class="mi">0</span>.<span class="mi">1</span>]:
+
+                <span class="nv">valid_prediction</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">cast</span><span class="ss">(</span><span class="nv">valid_label_prob</span> <span class="o">&gt;</span> <span class="nv">th</span>, <span class="nv">tf</span>.<span class="nv">int32</span><span class="ss">)</span>
+
+                <span class="nv">nr_pos_prediction</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">reduce_sum</span><span class="ss">(</span><span class="nv">valid_prediction</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">num_pos_prediction</span><span class="s1">&#39;</span><span class="ss">)</span>
+
+                <span class="nv">pos_prediction_corr</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">count_nonzero</span><span class="ss">(</span>
+
+                    <span class="nv">tf</span>.<span class="nv">logical_and</span><span class="ss">(</span>
+
+                        <span class="nv">valid_label_prob</span> <span class="o">&gt;</span> <span class="nv">th</span>,
+
+                        <span class="nv">tf</span>.<span class="nv">equal</span><span class="ss">(</span><span class="nv">valid_prediction</span>, <span class="nv">valid_anchor_labels</span><span class="ss">))</span>,
+
+                    <span class="nv">dtype</span><span class="o">=</span><span class="nv">tf</span>.<span class="nv">int32</span><span class="ss">)</span>
+
+                <span class="nv">placeholder</span> <span class="o">=</span> <span class="mi">0</span>.<span class="mi">5</span>   # <span class="nv">A</span> <span class="nv">small</span> <span class="nv">value</span> <span class="nv">will</span> <span class="nv">make</span> <span class="nv">summaries</span> <span class="nv">appear</span> <span class="nv">lower</span>.
+
+                <span class="nv">recall</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">cast</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">truediv</span><span class="ss">(</span><span class="nv">pos_prediction_corr</span>, <span class="nv">nr_pos</span><span class="ss">)</span>, <span class="nv">tf</span>.<span class="nv">float32</span><span class="ss">)</span>
+
+                <span class="nv">recall</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">where</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">equal</span><span class="ss">(</span><span class="nv">nr_pos</span>, <span class="mi">0</span><span class="ss">)</span>, <span class="nv">placeholder</span>, <span class="nv">recall</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">recall_th{}</span><span class="s1">&#39;</span>.<span class="nv">format</span><span class="ss">(</span><span class="nv">th</span><span class="ss">))</span>
+
+                <span class="nv">precision</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">cast</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">truediv</span><span class="ss">(</span><span class="nv">pos_prediction_corr</span>, <span class="nv">nr_pos_prediction</span><span class="ss">)</span>, <span class="nv">tf</span>.<span class="nv">float32</span><span class="ss">)</span>
+
+                <span class="nv">precision</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">where</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">equal</span><span class="ss">(</span><span class="nv">nr_pos_prediction</span>, <span class="mi">0</span><span class="ss">)</span>,
+
+                                     <span class="nv">placeholder</span>, <span class="nv">precision</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">precision_th{}</span><span class="s1">&#39;</span>.<span class="nv">format</span><span class="ss">(</span><span class="nv">th</span><span class="ss">))</span>
+
+                <span class="nv">summaries</span>.<span class="nv">extend</span><span class="ss">(</span>[<span class="nv">precision</span>, <span class="nv">recall</span>]<span class="ss">)</span>
+
+        <span class="nv">add_moving_summary</span><span class="ss">(</span><span class="o">*</span><span class="nv">summaries</span><span class="ss">)</span>
+
+    # <span class="nv">Per</span><span class="o">-</span><span class="nv">level</span> <span class="nv">loss</span> <span class="nv">summaries</span> <span class="nv">in</span> <span class="nv">FPN</span> <span class="nv">may</span> <span class="nv">appear</span> <span class="nv">lower</span> <span class="nv">due</span> <span class="nv">to</span> <span class="nv">the</span> <span class="nv">use</span> <span class="nv">of</span> <span class="nv">a</span> <span class="nv">small</span> <span class="nv">placeholder</span>.
+
+    # <span class="nv">But</span> <span class="nv">the</span> <span class="nv">total</span> <span class="nv">RPN</span> <span class="nv">loss</span> <span class="nv">will</span> <span class="nv">be</span> <span class="nv">fine</span>.  <span class="nv">TODO</span> <span class="nv">make</span> <span class="nv">the</span> <span class="nv">summary</span> <span class="nv">op</span> <span class="nv">smarter</span>
+
+    <span class="nv">placeholder</span> <span class="o">=</span> <span class="mi">0</span>.
+
+    <span class="nv">label_loss</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">nn</span>.<span class="nv">sigmoid_cross_entropy_with_logits</span><span class="ss">(</span>
+
+        <span class="nv">labels</span><span class="o">=</span><span class="nv">tf</span>.<span class="nv">cast</span><span class="ss">(</span><span class="nv">valid_anchor_labels</span>, <span class="nv">tf</span>.<span class="nv">float32</span><span class="ss">)</span>, <span class="nv">logits</span><span class="o">=</span><span class="nv">valid_label_logits</span><span class="ss">)</span>
+
+    <span class="nv">label_loss</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">reduce_sum</span><span class="ss">(</span><span class="nv">label_loss</span><span class="ss">)</span> <span class="o">*</span> <span class="ss">(</span><span class="mi">1</span>. <span class="o">/</span> <span class="nv">cfg</span>.<span class="nv">RPN</span>.<span class="nv">BATCH_PER_IM</span><span class="ss">)</span>
+
+    <span class="nv">label_loss</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">where</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">equal</span><span class="ss">(</span><span class="nv">nr_valid</span>, <span class="mi">0</span><span class="ss">)</span>, <span class="nv">placeholder</span>, <span class="nv">label_loss</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">label_loss</span><span class="s1">&#39;</span><span class="ss">)</span>
+
+    <span class="nv">pos_anchor_boxes</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">boolean_mask</span><span class="ss">(</span><span class="nv">anchor_boxes</span>, <span class="nv">pos_mask</span><span class="ss">)</span>
+
+    <span class="nv">pos_box_logits</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">boolean_mask</span><span class="ss">(</span><span class="nv">box_logits</span>, <span class="nv">pos_mask</span><span class="ss">)</span>
+
+    <span class="nv">delta</span> <span class="o">=</span> <span class="mi">1</span>.<span class="mi">0</span> <span class="o">/</span> <span class="mi">9</span>
+
+    <span class="nv">box_loss</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">losses</span>.<span class="nv">huber_loss</span><span class="ss">(</span>
+
+        <span class="nv">pos_anchor_boxes</span>, <span class="nv">pos_box_logits</span>, <span class="nv">delta</span><span class="o">=</span><span class="nv">delta</span>,
+
+        <span class="nv">reduction</span><span class="o">=</span><span class="nv">tf</span>.<span class="nv">losses</span>.<span class="nv">Reduction</span>.<span class="nv">SUM</span><span class="ss">)</span> <span class="o">/</span> <span class="nv">delta</span>
+
+    <span class="nv">box_loss</span> <span class="o">=</span> <span class="nv">box_loss</span> <span class="o">*</span> <span class="ss">(</span><span class="mi">1</span>. <span class="o">/</span> <span class="nv">cfg</span>.<span class="nv">RPN</span>.<span class="nv">BATCH_PER_IM</span><span class="ss">)</span>
+
+    <span class="nv">box_loss</span> <span class="o">=</span> <span class="nv">tf</span>.<span class="nv">where</span><span class="ss">(</span><span class="nv">tf</span>.<span class="nv">equal</span><span class="ss">(</span><span class="nv">nr_pos</span>, <span class="mi">0</span><span class="ss">)</span>, <span class="nv">placeholder</span>, <span class="nv">box_loss</span>, <span class="nv">name</span><span class="o">=</span><span class="s1">&#39;</span><span class="s">box_loss</span><span class="s1">&#39;</span><span class="ss">)</span>
+
+    <span class="nv">add_moving_summary</span><span class="ss">(</span><span class="nv">label_loss</span>, <span class="nv">box_loss</span>, <span class="nv">nr_valid</span>, <span class="nv">nr_pos</span><span class="ss">)</span>
+
+    <span class="k">return</span> [<span class="nv">label_loss</span>, <span class="nv">box_loss</span>]
+</pre></div>
+
+
+</details>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../model_mrcnn/" title="Model Mrcnn" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Model Mrcnn
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../../utils/box_ops/" title="Box Ops" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Box Ops
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Powered by
+        <a href="http://timothycrosley.github.io/portray">portray.</a>
+        You too can
+        <a href="http://timothycrosley.github.io/portray">
+          portray</a>
+        your Python project well using automatic documentation.
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../../../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../../../../.."}})</script>
+      
+    
+  </body>
+</html>
