@@ -23,27 +23,16 @@ try:
 except ImportError:
     pass
 
-
-if __name__ == '__main__':
+def main(args):
     # "spawn/forkserver" is safer than the default "fork" method and
     # produce more deterministic behavior & memory saving
     # However its limitation is you cannot pass a lambda function to subprocesses.
     import multiprocessing as mp
     mp.set_start_method('spawn')
-    parser = argparse.ArgumentParser()
-    parser.add_argument('--load', help='Load a model to start training from. It overwrites BACKBONE.WEIGHTS')
-    parser.add_argument('--logdir', help='Log directory. Will remove the old one if already exists.',
-                        default='train_log/maskrcnn')
-    parser.add_argument('--config', help="A list of KEY=VALUE to overwrite those defined in config.py", nargs='+')
 
     if get_tf_version_tuple() < (1, 6):
         # https://github.com/tensorflow/tensorflow/issues/14657
         logger.warn("TF<1.6 has a bug which may lead to crash in FasterRCNN if you're unlucky.")
-
-    args = parser.parse_args()
-    if args.config:
-        cfg.update_args(args.config)
-    register_mot(cfg.DATA.BASEDIR)  # add the mot datasets to the registry
 
     # Setup logging ...
     is_horovod = cfg.TRAINER == 'horovod'
@@ -91,8 +80,8 @@ if __name__ == '__main__':
         HostMemoryTracker(),
         ThroughputTracker(samples_per_step=cfg.TRAIN.NUM_GPUS),
         EstimatedTimeLeft(median=True),
-        SessionRunTimeout(60000),   # 1 minute timeout
-        GPUUtilizationTracker()
+        SessionRunTimeout(60000)#,   # 1 minute timeout
+        #GPUUtilizationTracker()
     ]
     if cfg.TRAIN.EVAL_PERIOD > 0:
         callbacks.extend([
@@ -125,3 +114,18 @@ if __name__ == '__main__':
         # nccl mode appears faster than cpu mode
         trainer = SyncMultiGPUTrainerReplicated(cfg.TRAIN.NUM_GPUS, average=False, mode='nccl')
     launch_train_with_config(traincfg, trainer)
+
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser()
+    parser.add_argument('--load', help='Load a model to start training from. It overwrites BACKBONE.WEIGHTS')
+    parser.add_argument('--logdir', help='Log directory. Will remove the old one if already exists.',
+                        default='train_log/maskrcnn')
+    parser.add_argument('--config', help="A list of KEY=VALUE to overwrite those defined in config.py", nargs='+')
+
+
+    args = parser.parse_args()
+    if args.config:
+        cfg.update_args(args.config)
+    register_mot(cfg.DATA.BASEDIR)  # add the mot datasets to the registry
+
+    main(args)

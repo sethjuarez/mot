@@ -17,9 +17,10 @@ from tensorpack.utils.argtools import log_once
 
 from mot.object_detection.modeling.model_rpn import get_all_anchors
 from mot.object_detection.modeling.model_fpn import get_all_anchors_fpn
+from mot.object_detection.utils.np_box_ops import iou as np_iou  # noqa
 from mot.object_detection.common import (
     CustomResize, DataFromListOfDict, box_to_point8,
-    filter_boxes_inside_shape, np_iou, point8_to_box, polygons_to_mask,
+    filter_boxes_inside_shape, point8_to_box, polygons_to_mask,
 )
 from mot.object_detection.config import config as cfg
 from mot.object_detection.dataset import DatasetRegistry, register_mot

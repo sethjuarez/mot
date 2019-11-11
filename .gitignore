@@ -155,3 +155,6 @@ images_errors.csv
 
 # patch files
 *.py.patch
+
+# aml files
+config.json
