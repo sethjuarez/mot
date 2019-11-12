@@ -7,7 +7,7 @@ def main():
     ws = Workspace.from_config()
 
     #compute
-    compute = AmlCompute(workspace=ws, name='frodo')
+    compute = AmlCompute(workspace=ws, name='gandalf')
 
     # datasource
     datastore = Datastore.get(ws, datastore_name='surfrider')
@@ -22,6 +22,7 @@ def main():
                             script_params=script_params,
                             compute_target=compute,
                             entry_script='train.py',
+                            use_gpu=True,
                             pip_packages=['opencv-python>=4.1',
                                             'tensorpack==0.9.8',
                                             'tensorflow-gpu>=1.3,<2.0',

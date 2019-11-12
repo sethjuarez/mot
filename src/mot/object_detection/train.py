@@ -16,6 +16,7 @@ from mot.object_detection.config import finalize_configs
 from mot.object_detection.data import get_train_dataflow
 from mot.object_detection.eval import EvalCallback
 from mot.object_detection.modeling.generalized_rcnn import ResNetC4Model, ResNetFPNModel
+from mot.object_detection.amlmonitor import AMLMonitor
 
 
 try:
@@ -80,7 +81,8 @@ def main(args):
         HostMemoryTracker(),
         ThroughputTracker(samples_per_step=cfg.TRAIN.NUM_GPUS),
         EstimatedTimeLeft(median=True),
-        SessionRunTimeout(60000)#,   # 1 minute timeout
+        SessionRunTimeout(60000)   # 1 minute timeout
+        #AMLCallback()
         #GPUUtilizationTracker()
     ]
     if cfg.TRAIN.EVAL_PERIOD > 0:
@@ -102,6 +104,7 @@ def main(args):
         model=MODEL,
         data=QueueInput(train_dataflow),
         callbacks=callbacks,
+        monitors=[AMLMonitor()],
         steps_per_epoch=stepnum,
         max_epoch=cfg.TRAIN.LR_SCHEDULE[-1] * factor // stepnum,
         session_init=session_init,
